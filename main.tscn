@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://ee42ggx6npmd"]
+
+[ext_resource type="Script" uid="uid://dge76wuu2hnji" path="res://main.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://c8x8m7x88t8f7" path="res://Asset/Alain1.png" id="2_lquwl"]
+[ext_resource type="Texture2D" uid="uid://btpld0344wwkq" path="res://Asset/dialoge.png" id="3_272bh"]
+[ext_resource type="Texture2D" uid="uid://cjcrvdq0mrwg7" path="res://Asset/Clock.png" id="3_h2yge"]
+[ext_resource type="FontFile" uid="uid://2gssq3rt0tdn" path="res://Asset/LXGWMarkerGothic-Regular.ttf" id="4_5vw27"]
+[ext_resource type="FontFile" uid="uid://cijndpf8wlwio" path="res://Asset/ZhanKuXiaoLOGOTi-2.otf" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://bnqsp1x0q70nh" path="res://Asset/pause.png" id="5_lquwl"]
+
+[sub_resource type="Animation" id="Animation_7mycd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimerArea/ToggleButton:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_272bh"]
+resource_name = "rene-swing"
+length = 2.5000000000000004
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimerArea/ToggleButton:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.08726646, -0.08726646, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5vw27"]
+_data = {
+&"RESET": SubResource("Animation_7mycd"),
+&"rene-swing": SubResource("Animation_272bh")
+}
+
+[node name="DesktopPet" type="Control" unique_id=1928905255]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Alain" type="TextureRect" parent="." unique_id=74608722]
+layout_mode = 0
+offset_right = 198.0
+offset_bottom = 249.0
+mouse_filter = 2
+texture = ExtResource("2_lquwl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="dialoge" type="TextureRect" parent="." unique_id=1014579477]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 1.0
+offset_right = 320.0
+offset_bottom = 129.0
+mouse_filter = 2
+texture = ExtResource("3_272bh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label1" type="Label" parent="dialoge" unique_id=1508419276]
+visible = false
+layout_mode = 0
+offset_left = 20.0
+offset_top = 41.000004
+offset_right = 127.0
+offset_bottom = 117.0
+rotation = 0.015568855
+theme_override_colors/font_color = Color(0.7882353, 0.61960787, 0.3137255, 1)
+theme_override_fonts/font = ExtResource("4_5vw27")
+theme_override_font_sizes/font_size = 15
+text = "人再笨还能
+学不会
+微积分吗"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="dialoge" unique_id=1211219442]
+visible = false
+layout_mode = 0
+offset_left = 11.0
+offset_top = 42.0
+offset_right = 143.0
+offset_bottom = 133.0
+rotation = 0.02505168
+theme_override_colors/font_color = Color(0.7882353, 0.61960787, 0.3137255, 1)
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("4_5vw27")
+theme_override_font_sizes/font_size = 18
+text = "哪一步错了
+为什么"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="dialoge" unique_id=596396739]
+visible = false
+layout_mode = 0
+offset_left = 12.0
+offset_top = 42.999996
+offset_right = 144.0
+offset_bottom = 134.0
+rotation = 0.04734248
+theme_override_colors/font_color = Color(0.7882353, 0.61960787, 0.3137255, 1)
+theme_override_constants/line_spacing = 17
+theme_override_fonts/font = ExtResource("4_5vw27")
+theme_override_font_sizes/font_size = 16
+text = "X月X日
+被安骂了"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="dialoge" unique_id=501609025]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 39.0
+offset_right = 139.0
+offset_bottom = 130.0
+rotation = 0.04734248
+theme_override_colors/font_color = Color(0.7882353, 0.61960787, 0.3137255, 1)
+theme_override_constants/line_spacing = 18
+theme_override_fonts/font = ExtResource("4_5vw27")
+theme_override_font_sizes/font_size = 16
+text = "你又在摸鱼
+了呢"
+horizontal_alignment = 1
+
+[node name="TimerArea" type="Control" parent="." unique_id=52104945]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="TimerArea" unique_id=1117459070]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 135.0
+offset_right = 271.0
+offset_bottom = 234.0
+size_flags_vertical = 0
+texture = ExtResource("3_h2yge")
+expand_mode = 1
+
+[node name="TimeLabel" type="Label" parent="TimerArea" unique_id=2007493550]
+layout_mode = 0
+offset_left = 114.00001
+offset_top = 166.0
+offset_right = 280.0
+offset_bottom = 227.0
+rotation = -0.040513705
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.41568628, 0.27450982, 0.17254902, 1)
+theme_override_fonts/font = ExtResource("4_7mycd")
+theme_override_font_sizes/font_size = 40
+text = "00:00:00"
+horizontal_alignment = 1
+
+[node name="ToggleButton" type="TextureButton" parent="TimerArea" unique_id=761874041]
+layout_mode = 0
+offset_left = 263.00003
+offset_top = 141.0
+offset_right = 375.00003
+offset_bottom = 235.0
+pivot_offset = Vector2(48, 58)
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_lquwl")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=411239920]
+libraries/ = SubResource("AnimationLibrary_5vw27")
+autoplay = &"rene-swing"
