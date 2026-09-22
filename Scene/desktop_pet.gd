@@ -3,15 +3,9 @@ extends Control
 const START_TEXTURE := preload("res://Asset/start.png")
 const PAUSE_TEXTURE := preload("res://Asset/pause.png")
 const SAVE_PATH := "user://timer_data.json"
-const DIALOG_INTERVAL := 600.0
-const TYPE_INTERVAL := 0.1
-const FADE_DURATION := 1.0
 
 @onready var time_label: Label = $TimerArea/TimeLabel
 @onready var toggle_button: TextureButton = $TimerArea/ToggleButton
-@onready var dialog_labels: Array[Label] = [
-	$dialoge/Label1, $dialoge/Label2, $dialoge/Label3, $dialoge/Label4
-]
 
 # 是否正在拖动，以及鼠标相对窗口左上角的位置
 var _dragging := false
@@ -21,10 +15,6 @@ var _elapsed_seconds := 0.0
 var _autosave_seconds := 0.0
 var _current_date := ""
 var _data: Dictionary = {"days": {}}
-var _dialog_texts: Array[String] = []
-var _current_dialog := -1
-var _dialog_seconds := 0.0
-var _switching_dialog := false
 
 
 func _ready() -> void:
@@ -33,20 +23,14 @@ func _ready() -> void:
 	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
 	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_ALWAYS_ON_TOP, true)
 	toggle_button.pressed.connect(_toggle_timer)
-	_set_mouse_area()
 	_load_data()
 	_current_date = Time.get_date_string_from_system()
 	_elapsed_seconds = float(_get_day(_current_date)["elapsed"])
 	_update_time_label()
-	_prepare_dialogs()
-	_switch_dialog()
 
 
 func _process(delta: float) -> void:
 	_check_new_day()
-	_dialog_seconds += delta
-	if _dialog_seconds >= DIALOG_INTERVAL and not _switching_dialog:
-		_switch_dialog()
 	if _is_timing:
 		_elapsed_seconds += delta
 		_autosave_seconds += delta
@@ -54,51 +38,6 @@ func _process(delta: float) -> void:
 		if _autosave_seconds >= 10.0:
 			_autosave_seconds = 0.0
 			_save_data()
-
-
-# 保存完整台词，并隐藏所有 Label
-func _prepare_dialogs() -> void:
-	for label in dialog_labels:
-		_dialog_texts.append(label.text)
-		label.visible = false
-		label.modulate.a = 1.0
-
-
-# 当前台词渐隐，然后随机打出下一条台词
-func _switch_dialog() -> void:
-	_switching_dialog = true
-	_dialog_seconds = 0.0
-	if _current_dialog >= 0:
-		var old_label := dialog_labels[_current_dialog]
-		var fade := create_tween()
-		fade.tween_property(old_label, "modulate:a", 0.0, FADE_DURATION)
-		await fade.finished
-		old_label.visible = false
-
-	var next_dialog := randi_range(0, dialog_labels.size() - 1)
-	while next_dialog == _current_dialog:
-		next_dialog = randi_range(0, dialog_labels.size() - 1)
-	_current_dialog = next_dialog
-
-	var label := dialog_labels[_current_dialog]
-	var full_text := _dialog_texts[_current_dialog]
-	label.text = ""
-	label.modulate.a = 1.0
-	label.visible = true
-	for length in range(1, full_text.length() + 1):
-		label.text = full_text.substr(0, length)
-		await get_tree().create_timer(TYPE_INTERVAL).timeout
-	_switching_dialog = false
-
-
-# 只有小人和时钟所在区域接收鼠标
-func _set_mouse_area() -> void:
-	DisplayServer.window_set_mouse_passthrough(PackedVector2Array([
-		Vector2(0, 0), Vector2(300, 0), Vector2(300, 124),
-		Vector2(372, 124), Vector2(372, 227), Vector2(300, 227),
-		Vector2(300, 250), Vector2(0, 250)
-	]))
-
 
 # 开始或暂停计时
 func _toggle_timer() -> void:
@@ -163,13 +102,12 @@ func _add_event_to_day(date: String, type: String, timestamp: String) -> void:
 	day["events"] = events
 
 
-# 将秒数显示为 时:分:秒
+# 将秒数显示为 时:分
 func _update_time_label() -> void:
 	var total := int(_elapsed_seconds)
 	var hours := total / 3600
 	var minutes := total / 60 % 60
-	var seconds := total % 60
-	time_label.text = "%02d:%02d:%02d" % [hours, minutes, seconds]
+	time_label.text = "%02d:%02d" % [hours, minutes]
 
 
 func _gui_input(event: InputEvent) -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btpld0344wwkq"
-path="res://.godot/imported/dialoge.png-3bbfa7e7f09901edd16788550212391a.ctex"
+uid="uid://cjcrvdq0mrwg7"
+path="res://.godot/imported/decorate2.png-2d49bda347277687dc9bd6a2175d48f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/dialoge.png"
-dest_files=["res://.godot/imported/dialoge.png-3bbfa7e7f09901edd16788550212391a.ctex"]
+source_file="res://Asset/decorate2.png"
+dest_files=["res://.godot/imported/decorate2.png-2d49bda347277687dc9bd6a2175d48f7.ctex"]
 
 [params]
 

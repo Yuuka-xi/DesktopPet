@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://phiork3b6imf"]
+
+[ext_resource type="Script" uid="uid://dge76wuu2hnji" path="res://Scene/desktop_pet.gd" id="1_hj7e5"]
+[ext_resource type="FontFile" uid="uid://2gssq3rt0tdn" path="res://Asset/LXGWMarkerGothic-Regular.ttf" id="2_hj7e5"]
+[ext_resource type="Texture2D" uid="uid://bnqsp1x0q70nh" path="res://Asset/pause.png" id="3_cibmm"]
+[ext_resource type="Texture2D" uid="uid://cjcrvdq0mrwg7" path="res://Asset/decorate2.png" id="4_641ek"]
+[ext_resource type="Texture2D" uid="uid://btpld0344wwkq" path="res://Asset/decorate.png" id="5_8pix4"]
+[ext_resource type="Texture2D" uid="uid://c8x8m7x88t8f7" path="res://Asset/Character.png" id="6_7v47a"]
+[ext_resource type="Texture2D" uid="uid://cneqomupol766" path="res://Asset/decorate3.png" id="7_2xsbn"]
+
+[sub_resource type="Animation" id="Animation_7mycd"]
+length = 3.0000000000000004
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tail:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.06981317007977318, 0.05235987755982989, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ring:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(222, 36), Vector2(222, 40), Vector2(222, 36)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ring:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bat:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(84, 84), Vector2(84, 88), Vector2(84, 84)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("bat:scale")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5vw27"]
+_data = {
+&"RESET": SubResource("Animation_7mycd")
+}
+
+[node name="DesktopPet" type="Control" unique_id=1928905255]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hj7e5")
+
+[node name="TimerArea" type="Control" parent="." unique_id=52104945]
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 40.0
+offset_right = 43.0
+offset_bottom = 80.0
+mouse_filter = 1
+
+[node name="TimeLabel" type="Label" parent="TimerArea" unique_id=2007493550]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 117.0
+offset_right = 240.0
+offset_bottom = 178.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.41568628, 0.27450982, 0.17254902, 1)
+theme_override_fonts/font = ExtResource("2_hj7e5")
+theme_override_font_sizes/font_size = 38
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="ToggleButton" type="TextureButton" parent="TimerArea" unique_id=761874041]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 159.0
+offset_right = 204.0
+offset_bottom = 265.0
+pivot_offset = Vector2(48, 58)
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_cibmm")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ring" type="TextureRect" parent="." unique_id=1117459070]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 36.0
+offset_right = 259.0
+offset_bottom = 57.0
+pivot_offset = Vector2(20, 12)
+size_flags_vertical = 0
+texture = ExtResource("4_641ek")
+expand_mode = 1
+
+[node name="tail" type="TextureRect" parent="." unique_id=1014579477]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 209.0
+offset_right = 371.0
+offset_bottom = 285.0
+pivot_offset = Vector2(12, 8)
+mouse_filter = 2
+texture = ExtResource("5_8pix4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Snape" type="TextureRect" parent="." unique_id=74608722]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 42.0
+offset_right = 311.0
+offset_bottom = 295.0
+mouse_filter = 2
+texture = ExtResource("6_7v47a")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bat" type="TextureRect" parent="." unique_id=1077477251]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 84.0
+offset_right = 196.0
+offset_bottom = 199.00108
+pivot_offset = Vector2(31, 38)
+mouse_filter = 2
+texture = ExtResource("7_2xsbn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=411239920]
+libraries/ = SubResource("AnimationLibrary_5vw27")
+autoplay = &"RESET"
