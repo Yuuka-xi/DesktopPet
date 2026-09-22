@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cijndpf8wlwio"
-path="res://.godot/imported/ZhanKuXiaoLOGOTi-2.otf-4f9664eb0d7586e48d6db8414733f07e.fontdata"
+uid="uid://2gssq3rt0tdn"
+path="res://.godot/imported/LXGWMarkerGothic-Regular.ttf-c46406a247e7fd833bbfa6ece2e124de.fontdata"
 
 [deps]
 
-source_file="res://Asset/ZhanKuXiaoLOGOTi-2.otf"
-dest_files=["res://.godot/imported/ZhanKuXiaoLOGOTi-2.otf-4f9664eb0d7586e48d6db8414733f07e.fontdata"]
+source_file="res://Asset/front/LXGWMarkerGothic-Regular.ttf"
+dest_files=["res://.godot/imported/LXGWMarkerGothic-Regular.ttf-c46406a247e7fd833bbfa6ece2e124de.fontdata"]
 
 [params]
 
