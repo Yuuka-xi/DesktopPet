@@ -96,10 +96,10 @@ mouse_filter = 1
 
 [node name="TimeLabel" type="Label" parent="TimerArea" unique_id=2007493550]
 layout_mode = 0
-offset_left = 74.0
-offset_top = 117.0
-offset_right = 240.0
-offset_bottom = 178.0
+offset_left = 76.0
+offset_top = 122.0
+offset_right = 242.0
+offset_bottom = 183.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0.41568628, 0.27450982, 0.17254902, 1)
 theme_override_fonts/font = ExtResource("2_hj7e5")
@@ -158,7 +158,7 @@ layout_mode = 0
 offset_left = 84.0
 offset_top = 84.0
 offset_right = 196.0
-offset_bottom = 199.00108
+offset_bottom = 199.00076
 pivot_offset = Vector2(31, 38)
 mouse_filter = 2
 texture = ExtResource("7_2xsbn")
