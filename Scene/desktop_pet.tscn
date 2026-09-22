@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dge76wuu2hnji" path="res://Scene/desktop_pet.gd" id="1_hj7e5"]
 [ext_resource type="FontFile" uid="uid://2gssq3rt0tdn" path="res://Asset/LXGWMarkerGothic-Regular.ttf" id="2_hj7e5"]
-[ext_resource type="Texture2D" uid="uid://bnqsp1x0q70nh" path="res://Asset/pause.png" id="3_cibmm"]
+[ext_resource type="Texture2D" uid="uid://dggew3xjlwmlj" path="res://Asset/start.png" id="3_hj7e5"]
 [ext_resource type="Texture2D" uid="uid://cjcrvdq0mrwg7" path="res://Asset/decorate2.png" id="4_641ek"]
 [ext_resource type="Texture2D" uid="uid://btpld0344wwkq" path="res://Asset/decorate.png" id="5_8pix4"]
 [ext_resource type="Texture2D" uid="uid://c8x8m7x88t8f7" path="res://Asset/Character.png" id="6_7v47a"]
@@ -115,7 +115,7 @@ offset_right = 204.0
 offset_bottom = 265.0
 pivot_offset = Vector2(48, 58)
 size_flags_horizontal = 4
-texture_normal = ExtResource("3_cibmm")
+texture_normal = ExtResource("3_hj7e5")
 ignore_texture_size = true
 stretch_mode = 5
 
