@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://2gssq3rt0tdn" path="res://Asset/front/LXGWMarkerGothic-Regular.ttf" id="4_3pt4j"]
 [ext_resource type="Texture2D" uid="uid://cjcrvdq0mrwg7" path="res://Asset/Clock.png" id="5_7y4ci"]
 [ext_resource type="FontFile" uid="uid://cijndpf8wlwio" path="res://Asset/front/ZhanKuXiaoLOGOTi-2.otf" id="6_mxd2g"]
-[ext_resource type="Texture2D" uid="uid://bnqsp1x0q70nh" path="res://Asset/pause.png" id="7_0sxm5"]
+[ext_resource type="Texture2D" uid="uid://dggew3xjlwmlj" path="res://Asset/start.png" id="7_ow1sv"]
 
 [sub_resource type="Animation" id="Animation_7mycd"]
 length = 0.001
@@ -176,7 +176,7 @@ offset_right = 375.00003
 offset_bottom = 235.0
 pivot_offset = Vector2(48, 58)
 size_flags_horizontal = 4
-texture_normal = ExtResource("7_0sxm5")
+texture_normal = ExtResource("7_ow1sv")
 ignore_texture_size = true
 stretch_mode = 5
 
